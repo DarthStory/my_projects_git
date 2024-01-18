@@ -1,0 +1,13 @@
+declair firstname "Alex"
+declair lastname "Dragon"
+declair streetaddress "123 Somewhere Dr."
+declair city "Utopia"
+declair zipcode "90210"
+
+print firstname then newline
+print lastname then newline
+print streetaddress then newline
+print city then newline
+print zipcode then newline
+
+end
