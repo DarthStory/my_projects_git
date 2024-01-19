@@ -1,4 +1,3 @@
-
 public class Week1 {
 
 	public static void main(String[] args) {
@@ -13,8 +12,5 @@ public class Week1 {
 		System.out.println(streetAddress);
 		System.out.println(cityName);
 		System.out.println(zipcode);
-		
-		
 	}
-
 }
