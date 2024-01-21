@@ -5,6 +5,7 @@ Create a list to reference associated with the age of the child and allow it to 
 
 	ask if there are any new children
 get input
+	take the input and assign a variable
 
 	if so, ask what their name is
 get input
