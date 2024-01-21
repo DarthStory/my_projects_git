@@ -1,0 +1,24 @@
+# building a Java application for storing the names and ages of children in a family.
+
+
+Create a list to reference associated with the age of the child and allow it to be expanded apon. 
+
+	ask if there are any new children
+get input
+
+	if so, ask what their name is
+get input
+
+	add that name to the list
+
+	ask what year they were born
+get input
+
+
+	if not ask what year it is.
+get input
+
+	reference the starter year to find out how to add to the ages.
+
+	print list
+
