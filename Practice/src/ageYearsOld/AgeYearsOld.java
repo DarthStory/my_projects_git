@@ -8,6 +8,8 @@ public class AgeYearsOld {
       int userAgeYears;
       int userAgeDays;
       int userAgeMinutes;
+      int totalHeartbeats;
+      int avgBeatsPerMinute = 72;
       
       System.out.print("Enter your age in years: ");
       userAgeYears = scnr.nextInt();
@@ -19,5 +21,8 @@ public class AgeYearsOld {
    
       userAgeMinutes = userAgeDays * 24 * 60;         // 24 hours/day, 60 minutes/hour
       System.out.println("You are " + userAgeMinutes + " minutes old.");
+      
+      totalHeartbeats = userAgeMinutes * avgBeatsPerMinute;
+      System.out.println("Your heart has beat " + totalHeartbeats + " times.");
    }
 }
