@@ -11,7 +11,5 @@ public class InputFromUser {
 		String greeting = "Hello, " + name + "!";
 		System.out.println(greeting);
 		
-
 	}
-
 }
