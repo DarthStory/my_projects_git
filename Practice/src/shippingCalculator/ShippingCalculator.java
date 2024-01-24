@@ -9,6 +9,8 @@ public class ShippingCalculator {
       int shipCostCents = 0;
       final int FLAT_FEE_CENTS = 75;
       final int CENTS_PER_POUND = 25;
+      
+      System.out.print("How much does it weigh?");
       shipWeightPounds = scnr.nextInt();
       shipCostCents = FLAT_FEE_CENTS + (CENTS_PER_POUND * shipWeightPounds);
 
