@@ -25,20 +25,26 @@ public class Maps {
 		System.out.println(empIds.containsValue(140));
 		System.out.println(empIds.containsValue(29));
 		
-		// "puts value in for the key input
+		// "puts value in for the key input and prints
 		System.out.println(empIds.put("David", 500));
+		
+		// 2 lines for the same outcome
 		empIds.put("David", 900);
 		System.out.println(empIds);
 		
+		// replaces the value if the key exists
 		empIds.replace("David", 250);
 		System.out.println(empIds);
-				
+		
+		// no key exists, so nothing is replaced		
 		empIds.replace("Craimer", 9000);
 		System.out.println(empIds);
 		
+		// if absent, it puts it in
 		empIds.putIfAbsent("John", 777);
 		System.out.println(empIds);
 		
+		// removes the key if it exists
 		empIds.remove("John");
 		System.out.println(empIds);
 		
