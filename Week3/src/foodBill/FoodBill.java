@@ -51,7 +51,7 @@ public class FoodBill {
 		
 		// giving the coupon discount depending on what they entered
 		monthlyTotalCoupon = monthlyTotal * couponAmount;
-		System.out.print("Coupon Discount: $");
+		System.out.print("Monthly Coupon Discount: $");
 		System.out.printf("%.2f", monthlyTotalCoupon);
 		System.out.println("");	
 		
@@ -69,7 +69,7 @@ public class FoodBill {
 		
 		// giving the coupon discount depending on what they entered	
 		weeklyAverageCoupon = weeklyAverage * couponAmount;
-		System.out.print("Coupon Discount: $");
+		System.out.print("Weekly Coupon Discount: $");
 		System.out.printf("%.2f", weeklyAverageCoupon);
 		System.out.println("");
 		
