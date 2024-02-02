@@ -23,17 +23,20 @@ public class PhoneKeysWallet2 {
 		keys = scnr.next();
 		
 		if (phone.compareTo("yes") == 0) {
-			stuff = 1;
-			
+			stuff = 1;			
+		}
+		else {	
 		}
 		if (wallet.compareTo("yes") == 0) {
-			stuff = stuff + 1;
-			
+			stuff = stuff + 1;			
+		}
+		else {	
 		}
 		if (keys.compareTo("yes") == 0) {
 			stuff = stuff + 1;
 		}
-		
+		else {	
+		}
 			
 			
 		switch (stuff) {

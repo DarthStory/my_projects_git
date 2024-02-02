@@ -3,7 +3,7 @@ package phoneKeysWallet;
 import java.util.Scanner;
 
 
-public class PhoneKeysWallet {
+public class PhoneKeysWallet3 {
 	public static void main (String [] args) {
 		Scanner scnr = new Scanner(System.in);
 		
