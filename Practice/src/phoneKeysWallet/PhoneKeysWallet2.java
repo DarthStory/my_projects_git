@@ -3,7 +3,7 @@ package phoneKeysWallet;
 import java.util.Scanner;
 
 
-public class PhoneKeysWallet {
+public class PhoneKeysWallet2 {
 	public static void main (String [] args) {
 		Scanner scnr = new Scanner(System.in);
 		
@@ -11,7 +11,7 @@ public class PhoneKeysWallet {
 		String wallet;
 		String keys;
 		int stuff = 0;
-		int nostuff = 0;
+		
 		
 		System.out.println("Do you have your phone?");
 		phone = scnr.next();
@@ -22,14 +22,17 @@ public class PhoneKeysWallet {
 		System.out.println("Do you have your keys?");
 		keys = scnr.next();
 		
-		if (phone.compareTo("yes") == 0)
+		if (phone.compareTo("yes") == 0) {
 			stuff = 1;
-		
-		if (wallet.compareTo("yes") == 0)
+			
+		}
+		if (wallet.compareTo("yes") == 0) {
 			stuff = stuff + 1;
-		
-		if (keys.compareTo("yes") == 0)
+			
+		}
+		if (keys.compareTo("yes") == 0) {
 			stuff = stuff + 1;
+		}
 		
 			
 			

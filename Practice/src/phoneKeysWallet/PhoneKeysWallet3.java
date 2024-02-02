@@ -23,13 +23,19 @@ public class PhoneKeysWallet {
 		keys = scnr.next();
 		
 		if (phone.compareTo("yes") == 0)
-			stuff = 1;
+			if (wallet.compareTo("yes") == 0)
+				if (keys.compareTo("yes") == 0)
+					stuff = 3;
+				else {
+					stuff = 2;
+				}
+			else {
+				stuff = 1;
+			}
+		else {
+			stuff = 0;
+		}
 		
-		if (wallet.compareTo("yes") == 0)
-			stuff = stuff + 1;
-		
-		if (keys.compareTo("yes") == 0)
-			stuff = stuff + 1;
 		
 			
 			
