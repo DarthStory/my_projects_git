@@ -17,6 +17,8 @@ public class FoodBill {
 		double weeklyAverageCoupon;
 		double weeklySavings;
 		double monthlySavings;
+		double weeklySavingsOff;
+		double monthlySavingsOff;
 		
 		System.out.println("How much did you spend on groceries in the first week?");
 		week1 = scnr.nextDouble();
@@ -33,46 +35,54 @@ public class FoodBill {
 		System.out.println("How much were your coupons worth in decimal points? Example, 5% would be .05");
 		couponAmount = scnr.nextDouble();
 		
-		if (couponAmount > .10)
+		if (couponAmount > 1.0)
 			couponAmount = .10;
 		
-		if (couponAmount <= 0)
+		if (couponAmount <= 0.0)
 			couponAmount = .10;
 		
 		
 		
 		monthlyTotal = (week1 + week2 + week3 + week4);
-		weeklyAverage = monthlyTotal / 4;
+			System.out.print("Monthly total: $");
+			System.out.printf("%.2f", monthlyTotal);
+			System.out.println("");
 		
 		monthlyTotalCoupon = monthlyTotal * couponAmount;
+			System.out.print("Coupon Discount: $");
+			System.out.printf("%.2f", monthlyTotalCoupon);
+			System.out.println("");	
+		
+		monthlySavings = (monthlyTotal - monthlyTotalCoupon);
+			System.out.print("Monthly total after coupons: $");
+			System.out.printf("%.2f", monthlySavings);
+			System.out.println("");
+			
+		weeklyAverage = monthlyTotal / 4;
+			System.out.print("Weekly average: $");
+			System.out.printf("%.2f", weeklyAverage);
+			System.out.println("");
+			
 		weeklyAverageCoupon = weeklyAverage * couponAmount;
+			System.out.print("Coupon Discount: $");
+			System.out.printf("%.2f", weeklyAverageCoupon);
+			System.out.println("");
 		
-		weeklySavings = weeklyAverage - weeklyAverageCoupon;
-		monthlySavings = monthlyTotal - monthlyTotalCoupon;
+		weeklySavings = (weeklyAverage - weeklyAverageCoupon);
+			System.out.print("Weekly total after coupons: $");
+			System.out.printf("%.2f", weeklySavings);
+			System.out.println("");
 		
-		System.out.print("Monthly total: $");
-		System.out.printf("%.2f", monthlyTotal);
-		System.out.println("");
 		
-		System.out.print("Weekly average: $");
-		System.out.printf("%.2f", weeklyAverage);
-		System.out.println("");
+
 		
-		System.out.print("Montly Total with Coupons: $");
-		System.out.printf("%.2f", monthlyTotalCoupon);
-		System.out.println("");
+
 		
-		System.out.print("Weekly average with Coupons: $");
-		System.out.printf("%.2f", weeklyAverageCoupon);
-		System.out.println("");
+
 		
-		System.out.print("Congradulations! This is how much you saved this month!: $");
-		System.out.printf("%.2f", monthlySavings);
-		System.out.println("");
+
 		
-		System.out.print("You also saved this much per week!!: $");
-		System.out.printf("%.2f", weeklySavings);
-		System.out.println("");
+
 		
 		
 		
