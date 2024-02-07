@@ -6,23 +6,32 @@ public class LoopConstruct {
 	public static void main(String[] args) {
 		Scanner scnr = new Scanner(System.in);
 	
+		// declare max number for minimum and max negative value for maximum, 
+		// this way no matter the input, answer will set the first minimum and maximum
 		float minimum = Float.MAX_VALUE;
 		float maximum = -Float.MAX_VALUE;
 		float total = 0;
 		int number = 0;
 		
-		
+		// Need to loop 5 times for 5 inputs
 		while (number < 5) {
 			System.out.print("Input a floating-point number: ");
+			// had to add float since this variable is only
+			// created and used inside the loop as a place holder
 			float answer = scnr.nextFloat();
+			
+			// Compound operator so total and answer are equal when end of input
 			total += answer;
-		
+			
+			// for each input, it compares it to the min to see if there is a new minimum
 			if (answer < minimum) {
 				minimum = answer;
 			}
+			// for each input, it compares it to the max to see if there is a new maximum
 			if (answer > maximum) {
 				maximum = answer;
 			}
+			// add to the number to progress loop
 			number++;
 		}
 		System.out.println("Total is: " + total);
