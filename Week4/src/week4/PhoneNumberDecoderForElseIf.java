@@ -51,7 +51,6 @@ public class PhoneNumberDecoderForElseIf {
                  ((currChar >= 'W') && (currChar <= 'Z')) ) {
           System.out.print('9');
          }
-         // FIXME: Add remaining else-if branches
          else {
             System.out.print('?');
          }      

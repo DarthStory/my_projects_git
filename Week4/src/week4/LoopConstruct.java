@@ -34,11 +34,11 @@ public class LoopConstruct {
 			// add to the number to progress loop
 			number++;
 		}
+		// Print out Total, Average, Maximum, Minimum, and Interest at 20%
 		System.out.println("Total is: " + total);
 		System.out.println("Average is: " + (total / 5));
 		System.out.println("Maximum: " + maximum);
 		System.out.println("Minimum: " + minimum);
 		System.out.println("Interest on total at 20%: " + (total * .20));
-		System.out.println("All done");
 	}
 }
