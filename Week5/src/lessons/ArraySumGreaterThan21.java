@@ -21,8 +21,16 @@ public class ArraySumGreaterThan21 {
       // Determine sum
       sumVal = 0;
       for (i = 0; i < userVals.length; ++i) {
-         sumVal = sumVal + userVals[i];
+         sumVal += userVals[i];
       }
       System.out.println("Sum: " + sumVal);
+
+      // Print numbers greater than 21
+      System.out.println("Numbers greater than 21:");
+      for (i = 0; i < userVals.length; ++i) {
+         if (userVals[i] > 21) {
+            System.out.println(userVals[i]);
+         }
+      }
    }
 }
