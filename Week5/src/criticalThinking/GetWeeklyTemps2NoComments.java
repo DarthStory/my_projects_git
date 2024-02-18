@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.ListIterator;
 import java.util.InputMismatchException;
 
-public class GetWeeklyTemps2 {
+public class GetWeeklyTemps2NoComments {
 	public static void main(String[] args) {
 		Scanner scnr = new Scanner(System.in);
 		ArrayList<String> months = new ArrayList<>();

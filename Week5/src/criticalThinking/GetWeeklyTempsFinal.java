@@ -2,13 +2,11 @@ package criticalThinking;
 
 import java.util.Scanner;
 import java.util.ArrayList;
-// this progresses the index of the array to print the next index in the array
+import java.util.InputMismatchException;
 import java.util.ListIterator;
-// for now, this is to stop the error at the end of the array, I need to figure
-// out how to stop at the end of the array. 
-import java.util.NoSuchElementException;
 
-public class GetWeeklyTemps {
+
+public class GetWeeklyTempsFinal {
 	public static void main(String[] args) {
 		Scanner scnr = new Scanner(System.in);
 		// first array for the months
@@ -23,7 +21,7 @@ public class GetWeeklyTemps {
 		int minimum = Integer.MAX_VALUE;
 		int maximum = -Integer.MAX_VALUE;
 		
-		// while the loop has happened for less than 13 iterations
+		// while the loop has happens for 12 iterations
 		// Loop to get Month and average temps of that month from the user
 		while (i < 12) {
 			System.out.println("What Month is it?");
@@ -33,11 +31,12 @@ public class GetWeeklyTemps {
 				if (!months.contains(answer)) {
 					months.add(answer);
 					System.out.println("What was the average temp of that month?");
+					// if user inputs a string instead of an int
+					try {
 					Integer temp = scnr.nextInt();
 					// for adding the temp to the array
 					averageTemps.add(temp);
-					// utilizing this from the last project to find the min/max
-					// average temp of the year
+					// find the min/max average temp of the year
 					total += temp;
 						if (temp < minimum) {
 							minimum = temp;
@@ -47,6 +46,10 @@ public class GetWeeklyTemps {
 						}
 					// progresses while loop
 					++i;
+					// to catch the mismatch exception
+					}catch (InputMismatchException e) {
+						System.out.println("Put in an average degree for the month.");
+					}
 				}
 				// if the month was already put in
 				else {
@@ -71,30 +74,14 @@ public class GetWeeklyTemps {
 				// initializes the listiteration class
 				ListIterator<String> iterator = months.listIterator();
 				ListIterator<Integer> iterators = averageTemps.listIterator();
-				// This prints out the first month, need to figure out how to start at 0
-				// FOUND THIS WAS NOT NEEDED AFTER I TOOK OUT THE "ITERATOR.NEXT();" BELOW, IT ACTUALLY STARTED AT 0
-//				System.out.println(months.getFirst() + " was an average of " 
-//						 + averageTemps.getFirst() + " degrees.");
 				int j = 0;
-				// this seems to make the first iteration 1, using -1 for j did not resolve the issue.
-				// this starts the progression of the iterations
-				// EDIT - THIS WAS NOT NEEDED - NO NEED FOR THE TRY/CATCH AS IT STOPPED ERRORING OUT
-//				iterator.next();
-				// while loop to go through both the String Arraylist and the Integer arraylist
+				// while loop to go through both the String arraylist and the Integer arraylist
 				while (j < 12) {
-					// found this last week to catch an exception after I turned in the project. 
-					//I am not sure this is "cheating" as it
-					// is a legit class for catching errors. However, I feel that it should stop if < 12.. but 
-					// it does not seem to. 
-//					try {
 					// prints out each iteration of the months arraylist and the averageTemps array list. 
 					System.out.println(iterator.next() + " was an average"
 							+ " of " + iterators.next() + " degrees.");
+					// progresses while loop
 					++j;
-					// the catch for the exception when it is thrown
-//					}catch (NoSuchElementException e) {
-//						break;
-//					}
 				}
 				// prints out required output for the "year" input
 				System.out.println("Maximum temp for the year was: " + maximum);
