@@ -38,14 +38,14 @@ public class GetWeeklyTempsFinal {
 					averageTemps.add(temp);
 					// find the min/max average temp of the year
 					total += temp;
-						if (temp < minimum) {
-							minimum = temp;
-						}
-						if (temp > maximum) {
-							maximum = temp;
-						}
-						// progresses while loop
-						++i;
+					if (temp < minimum) {
+						minimum = temp;
+					}
+					if (temp > maximum) {
+						maximum = temp;
+					}
+					// progresses while loop
+					++i;
 				// to catch the mismatch exception
 				}catch (InputMismatchException e) {
 					System.out.println("Put in an average degree for the month.");
