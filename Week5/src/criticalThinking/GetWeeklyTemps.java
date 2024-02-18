@@ -72,27 +72,29 @@ public class GetWeeklyTemps {
 				ListIterator<String> iterator = months.listIterator();
 				ListIterator<Integer> iterators = averageTemps.listIterator();
 				// This prints out the first month, need to figure out how to start at 0
-				System.out.println(months.getFirst() + " was an average of " 
-						 + averageTemps.getFirst() + " degrees.");
+				// FOUND THIS WAS NOT NEEDED AFTER I TOOK OUT THE "ITERATOR.NEXT();" BELOW, IT ACTUALLY STARTED AT 0
+//				System.out.println(months.getFirst() + " was an average of " 
+//						 + averageTemps.getFirst() + " degrees.");
 				int j = 0;
 				// this seems to make the first iteration 1, using -1 for j did not resolve the issue.
 				// this starts the progression of the iterations
-				iterator.next();
+				// EDIT - THIS WAS NOT NEEDED - NO NEED FOR THE TRY/CATCH AS IT STOPPED ERRORING OUT
+//				iterator.next();
 				// while loop to go through both the String Arraylist and the Integer arraylist
 				while (j < 12) {
 					// found this last week to catch an exception after I turned in the project. 
 					//I am not sure this is "cheating" as it
 					// is a legit class for catching errors. However, I feel that it should stop if < 12.. but 
 					// it does not seem to. 
-					try {
+//					try {
 					// prints out each iteration of the months arraylist and the averageTemps array list. 
 					System.out.println(iterator.next() + " was an average"
 							+ " of " + iterators.next() + " degrees.");
 					++j;
 					// the catch for the exception when it is thrown
-					}catch (NoSuchElementException e) {
-						break;
-					}
+//					}catch (NoSuchElementException e) {
+//						break;
+//					}
 				}
 				// prints out required output for the "year" input
 				System.out.println("Maximum temp for the year was: " + maximum);
