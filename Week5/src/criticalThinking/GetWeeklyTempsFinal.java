@@ -33,19 +33,19 @@ public class GetWeeklyTempsFinal {
 				System.out.println("What was the average temp of that month?");
 				// if user inputs a string instead of an int
 				try {
-				Integer temp = scnr.nextInt();
-				// for adding the temp to the array
-				averageTemps.add(temp);
-				// find the min/max average temp of the year
-				total += temp;
-					if (temp < minimum) {
-						minimum = temp;
-					}
-					if (temp > maximum) {
-						maximum = temp;
-					}
-				// progresses while loop
-				++i;
+					Integer temp = scnr.nextInt();
+					// for adding the temp to the array
+					averageTemps.add(temp);
+					// find the min/max average temp of the year
+					total += temp;
+						if (temp < minimum) {
+							minimum = temp;
+						}
+						if (temp > maximum) {
+							maximum = temp;
+						}
+						// progresses while loop
+						++i;
 				// to catch the mismatch exception
 				}catch (InputMismatchException e) {
 					System.out.println("Put in an average degree for the month.");
@@ -67,7 +67,7 @@ public class GetWeeklyTempsFinal {
 		int index = months.indexOf(mon);
 		// if "mon" is in the months array specifically, it outputs that month and its average temp
 		if (months.contains(mon)) {
-		System.out.println(mon + " average of " + averageTemps.get(index) + " degrees.");
+			System.out.println(mon + " average of " + averageTemps.get(index) + " degrees.");
 		}
 		// if the user type in "year", then this runs
 		else if (mon.equals("year")) {
