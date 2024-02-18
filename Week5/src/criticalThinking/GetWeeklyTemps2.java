@@ -4,6 +4,7 @@ import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.ListIterator;
 import java.util.NoSuchElementException;
+import java.util.InputMismatchException;
 
 public class GetWeeklyTemps2 {
 	public static void main(String[] args) {
@@ -21,6 +22,7 @@ public class GetWeeklyTemps2 {
 				if (!months.contains(answer)) {
 					months.add(answer);
 					System.out.println("What was the average temp of that month?");
+					try {
 					Integer temp = scnr.nextInt();
 					averageTemps.add(temp);
 					total += temp;
@@ -31,6 +33,9 @@ public class GetWeeklyTemps2 {
 							maximum = temp;
 						}
 					++i;
+					}catch (InputMismatchException e) {
+						System.out.println("Put in an average degree for the month.");
+					}
 				}
 				else {
 					System.out.println("You already added that month.");
