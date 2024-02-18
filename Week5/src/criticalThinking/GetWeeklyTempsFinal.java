@@ -60,7 +60,7 @@ public class GetWeeklyTempsFinal {
 		// starts the question after all the information has been entered into the arraylists
 		String mon;
 		System.out.println("If you want the a specific Month's average, type that month."
-				+ " If you want the whole year, with average, Min/Max temp, type year");
+				+ " If you want the whole year, with average, Min/Max temp, type \"Year\"");
 		// gets the input from the user, "Month" or "year"
 		mon = scnr.next();
 		// searches for "mon" input in the months arraylist
@@ -70,7 +70,7 @@ public class GetWeeklyTempsFinal {
 			System.out.println(mon + " average of " + averageTemps.get(index) + " degrees.");
 		}
 		// if the user type in "year", then this runs
-		else if (mon.equals("year")) {
+		else if (mon.equals("Year")) {
 			// initializes the listiteration class
 			ListIterator<String> iterator = months.listIterator();
 			ListIterator<Integer> iterators = averageTemps.listIterator();
