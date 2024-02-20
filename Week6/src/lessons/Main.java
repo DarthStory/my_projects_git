@@ -15,7 +15,7 @@ public class Main {
 		loopMonths();
 		
 		Scanner scnr = new Scanner(System.in);
-		while (true) { // infinite loop that qill keep asking this until "" empty string, then "break;"
+		while (true) { // infinite loop that will keep asking this until "" empty string, then "break;"
 			System.out.println("Enter in a month.");
 			String monthName = scnr.nextLine();
 			if (monthName.equals("")) {
