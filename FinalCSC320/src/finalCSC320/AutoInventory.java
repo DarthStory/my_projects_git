@@ -20,7 +20,7 @@ public class AutoInventory {
 				if (newModel != null && !newModel.isEmpty()) automobile.setModel(newModel);
 				if (newColor != null && !newColor.isEmpty()) automobile.setColor(newColor);
 				if (newYear != null && newYear > 0) automobile.setYear(newYear);
-				if (newMileage != null && newYear > 0) automobile.setMileage(newMileage);
+				if (newMileage > 0) automobile.setMileage(newMileage);
 				return true;
 			}
 		}

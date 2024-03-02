@@ -1,5 +1,6 @@
 package finalCSC320;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Dealership {
@@ -8,9 +9,39 @@ public class Dealership {
 		AutoInventory auto = new AutoInventory();
 		Scanner scnr = new Scanner(System.in);
 		
-		System.out.println("Follow the prompts for: Make, Model, Color, Year, Mileage");
-		auto.addAutomobile(new Automobile(scnr.next(), scnr.next(), scnr.next(),
-				scnr.nextInt(), scnr.nextInt()));
+		System.out.println("Please enter in the following information: ");
+		System.out.print("Make: ");
+		String make = scnr.nextLine();
+		System.out.print("Model: ");
+		String model = scnr.next();
+		System.out.print("Color: ");
+		String color = scnr.next();
+		int year = 0;
+		int mileage = 0;
+		boolean valid = false;
+		
+		while (!valid) {
+			try {
+				System.out.print("Year: ");
+				year = scnr.nextInt();
+				valid = true;
+			} catch (InputMismatchException e) {
+				System.out.println("Invalid input. Please enter Year: ");
+				scnr.next();
+			}
+		}
+		valid = false;
+		while (!valid) {
+			try {
+				System.out.print("Mileage: ");
+				mileage = scnr.nextInt();
+				valid = true;
+			}catch (InputMismatchException e) {
+				System.out.println("Invalid inpupt. Please enter Mileage: ");
+				scnr.next();
+			}
+		}
+		auto.addAutomobile(new Automobile(make, model, color, year, mileage));
 		auto.displayAuto();
 		
 		System.out.println("Do you want to: \n1 Delete, \n2 Modify or \n3 Exit");
@@ -38,11 +69,12 @@ public class Dealership {
                 int newMileage = scnr.nextInt();
 
                 // Check if the modification was successful
-                if (auto.modifyAutomobile(makeToModify, newMake.isEmpty() ? null : newMake, 
-                                                   newModel.isEmpty() ? null : newModel, 
-                                                   newColor.isEmpty() ? null : newColor, 
-                                                   newYear <= 0 ? null : newYear, 
-                                                   newMileage <= 0 ? null : newMileage)) {
+                if (auto.modifyAutomobile(makeToModify,
+                	newMake.isEmpty() ? null : newMake, 
+                    newModel.isEmpty() ? null : newModel, 
+                    newColor.isEmpty() ? null : newColor, 
+                    newYear <= 0 ? null : newYear, 
+                    newMileage <= 0 ? null : newMileage)) {
                     System.out.println("Car modified successfully.");
                 } else {
                     System.out.println("Car not found.");
@@ -55,5 +87,6 @@ public class Dealership {
                 break;
 		}
 		auto.displayAuto();
+		scnr.close();
 	}
 }

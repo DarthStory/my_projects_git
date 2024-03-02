@@ -9,15 +9,15 @@ public class Automobile {
 	private int mileage;
 	
 	public Automobile(String make, String model, String color, int year, int mileage) {
-		this.setMake(make);
-		this.setModel(model);
-		this.setColor(color);
-		this.setYear(year);
-		this.setMileage(mileage);
+		this.make = make;
+		this.model = model;
+		this.color = color;
+		this.year = year;
+		this.mileage = mileage;
 	}
 
 	public String getMake() {
-		return make;
+		return this.make;
 	}
 
 	public void setMake(String make) {
@@ -25,7 +25,7 @@ public class Automobile {
 	}
 
 	public String getModel() {
-		return model;
+		return this.model;
 	}
 
 	public void setModel(String model) {
@@ -33,7 +33,7 @@ public class Automobile {
 	}
 
 	public String getColor() {
-		return color;
+		return this.color;
 	}
 
 	public void setColor(String color) {
@@ -41,7 +41,7 @@ public class Automobile {
 	}
 
 	public int getYear() {
-		return year;
+		return this.year;
 	}
 
 	public void setYear(int year) {
@@ -49,7 +49,7 @@ public class Automobile {
 	}
 
 	public int getMileage() {
-		return mileage;
+		return this.mileage;
 	}
 
 	public void setMileage(int mileage) {
@@ -58,6 +58,6 @@ public class Automobile {
 	
 	@Override
 	public String toString() {
-		return make + " " + model + " " + color + " " + year + " " + mileage;
+		return this.make + " " + this.model + " " + this.color + " " + this.year + " " + this.mileage;
 	}
 }
