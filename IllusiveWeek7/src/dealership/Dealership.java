@@ -106,6 +106,7 @@ public class Dealership {
 				System.out.println("Invalid choice. Please try again.");
 			}
 			System.out.println();
+			scnr.close();
 		}
 	}
 }

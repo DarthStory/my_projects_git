@@ -60,8 +60,6 @@ public class Automobile {
 	@Override
 	public String toString() {
 		return make + " " + model + " " + color   + " " + year + " " + mileage;
-	}
-
-	
+	}	
 }
 
