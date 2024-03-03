@@ -39,7 +39,6 @@ public class AutoInventory {
 			for(int i = 0; i < automobiles.size(); i++) {
 				System.out.print("Automobile #" + (i + 1) + " ");
 				System.out.println(automobiles.get(i));
-				System.out.println(); // empty line for formatting
 			}
 		}
 		

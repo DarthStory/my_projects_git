@@ -24,12 +24,13 @@ public class Dealership {
 			switch (choice) {
 			case 0:
 				System.out.println("Exiting application.");
+				scnr.close();
 				return;
 			case 1:
 				// add 
 				System.out.println("Enter Make, Model, Color, Year, and Mileage");
-				String model = scnr.next();
 				String make = scnr.next();
+				String model = scnr.next();
 				String color = scnr.next();
 				
 				int year = 0;
@@ -55,16 +56,16 @@ public class Dealership {
 				// Modify an entry
 				System.out.print("Enter the number of the automobile to modify: ");
 				int modifyIndex = scnr.nextInt();
-				scnr.nextLine();
 				
 				if(modifyIndex <= 0 || modifyIndex > autoInventory.getAutomobiles().size()) {
 					System.out.println("Invalid number. Please try again.");
+					break;
 				}
 				
 				System.out.println("Enter a new automobile Make, Model, Color, Year, and Mileage.");
-				String newMake = scnr.nextLine();
-				String newModel = scnr.nextLine();
-				String newColor = scnr.nextLine();
+				String newMake = scnr.next();
+				String newModel = scnr.next();
+				String newColor = scnr.next();
 			
 				int newYear = 0;
 				while (newYear == 0) {
@@ -106,7 +107,6 @@ public class Dealership {
 				System.out.println("Invalid choice. Please try again.");
 			}
 			System.out.println();
-			scnr.close();
 		}
 	}
 }
