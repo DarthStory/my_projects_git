@@ -33,15 +33,89 @@ public class Dealership {
 				return;
 			case 1:
 				// add 
-				autoInventory.autoAddPrompt();
+				System.out.println("Enter Make, Model, Color, Year, and Mileage");
+				String make = scnr.next();
+				String model = scnr.next();
+				String color = scnr.next();
+				
+				int year = 0;
+				while(year == 0) {
+					try {
+						year = scnr.nextInt();
+					} catch (InputMismatchException e) {
+						System.out.println("Invalid year. Please enter again.");
+					}
+				}
+				int mileage = 0;
+				while (mileage == 0) {
+					try {
+						mileage = scnr.nextInt();
+					} catch (InputMismatchException e) {
+						System.out.println("Invalid mileage. Please enter again.");
+					}
+				}
+				autoInventory.addAutomobile(make, model, color, year, mileage);
+				System.out.println("Automobile added");
 				break;
 			case 2:
 				// Modify an entry
-				autoInventory.autoModifyPrompt();
+				System.out.print("Enter the number of the automobile to modify: ");
+				int modifyIndex = 0;
+				try {
+				modifyIndex = scnr.nextInt();
+				} catch (InputMismatchException e) {
+					System.out.println("Invalid number. Please try again.");
+					scnr.nextInt();
+				}
+				
+				if(modifyIndex <= 0 || modifyIndex > autoInventory.getAutomobiles().size()) {
+					System.out.println("Invalid number. Please try again.");
+					break;
+				}
+				
+				System.out.println("Enter a new automobile Make, Model, Color, Year, and Mileage.");
+				String newMake = scnr.next();
+				String newModel = scnr.next();
+				String newColor = scnr.next();
+			
+				int newYear = 0;
+				while (newYear == 0) {
+					try {
+						newYear = scnr.nextInt();
+					} catch (InputMismatchException e) {
+						System.out.println("Invalid year. Please enter again.");
+						scnr.next();
+					}
+				}
+				int newMileage = 0;
+				while (newMileage == 0) {
+					try {
+						newMileage = scnr.nextInt();
+					} catch (InputMismatchException e) {
+						System.out.println("Invalid year. Please enter again.");
+						scnr.next();
+					}
+				}
+				autoInventory.editAutomobile(modifyIndex - 1, newMake, newModel, newColor, newYear, newMileage);
+				System.out.println("Automobile modified successfuly.");
 				break;			
 			case 3:
 				// delete
-				autoInventory.autoDeletePropt();
+				System.out.println("Enter the number of the automobile to delete: ");
+				int deleteIndex = 0;
+				try {
+				deleteIndex = scnr.nextInt();
+				} catch (InputMismatchException e) {
+					System.out.println("Invalid number. Please try again.");
+					scnr.nextInt();
+				}
+				
+				if (deleteIndex <= 0 || deleteIndex > autoInventory.getAutomobiles().size()) {
+					System.out.println("Invalid number. Please try again.");
+					break;
+				}
+				autoInventory.deleteAutomobile(deleteIndex - 1);
+				System.out.println("Automobile deleted successfully.");
 				break;
 			case 4:
 				// View all automobiles
