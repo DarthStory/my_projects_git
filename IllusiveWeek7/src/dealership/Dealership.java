@@ -57,6 +57,7 @@ public class Dealership {
 				System.out.print("Enter the number of the automobile to modify: ");
 				int modifyIndex = scnr.nextInt();
 				
+				
 				if(modifyIndex <= 0 || modifyIndex > autoInventory.getAutomobiles().size()) {
 					System.out.println("Invalid number. Please try again.");
 					break;
@@ -73,6 +74,7 @@ public class Dealership {
 						newYear = scnr.nextInt();
 					} catch (InputMismatchException e) {
 						System.out.println("Invalid year. Please enter again.");
+						scnr.next();
 					}
 				}
 				int newMileage = 0;
@@ -81,9 +83,10 @@ public class Dealership {
 						newMileage = scnr.nextInt();
 					} catch (InputMismatchException e) {
 						System.out.println("Invalid year. Please enter again.");
+						scnr.next();
 					}
 				}
-				autoInventory.editAutomobile(modifyIndex, newMake, newModel, newColor, newYear, newMileage);
+				autoInventory.editAutomobile(modifyIndex - 1, newMake, newModel, newColor, newYear, newMileage);
 				System.out.println("Automobile modified successfuly.");
 				break;			
 			case 3:
