@@ -85,6 +85,7 @@ public class Dealership {
 					} catch (InputMismatchException e) {
 						System.out.println("Invalid year. Please enter again.");
 						scnr.next();
+						break;
 					}
 				}
 				int newMileage = 0;
@@ -94,6 +95,7 @@ public class Dealership {
 					} catch (InputMismatchException e) {
 						System.out.println("Invalid year. Please enter again.");
 						scnr.next();
+						break;
 					}
 				}
 				autoInventory.editAutomobile(modifyIndex - 1, newMake, newModel, newColor, newYear, newMileage);
