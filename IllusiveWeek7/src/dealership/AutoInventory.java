@@ -11,6 +11,7 @@ public class AutoInventory {
 		public AutoInventory() {
 			automobiles = new ArrayList<>();
 		}
+		// Add Automobile
 		public void addAutomobile(String make, String model, String color, int year, int mileage) {
 			Automobile automobile = new Automobile(make, model, color, year, mileage);
 			automobiles.add(automobile);
