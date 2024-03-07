@@ -1,0 +1,19 @@
+Mad Libs
+
+This program should ask the user for one of the 4 following:
+	noun
+	verb
+	adjective
+	adverb
+	
+prompt the user for a word
+store the word in one of 4 arrays
+take the words and insert them into a pre-made Story. 
+print out that Story. 
+~~~~~~~~~~~~~~~
+
+1. come up with the Story
+2. find the words that are one of the 4 above
+3. take out the words and replace them with the user input replacement word
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
