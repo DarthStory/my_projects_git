@@ -2,13 +2,14 @@ package dealership;
 
 public class Automobile {
 	
+	// variables of an object "Automobile"
 	private String make;
 	private String model;
 	private String color;
 	private int year;
 	private int mileage;
 	
-	// Constructor
+	// Constructor, inputs for what an "Automobile" is
 	public Automobile(String make, String model, String color, int year, int mileage) {
 		this.make = make;
 		this.model = model;
@@ -16,7 +17,7 @@ public class Automobile {
 		this.year = year;
 		this.mileage = mileage;
 	}
-
+	// Getters and Setters for each variable. 
 	public String getMake() {
 		return make;
 	}
@@ -57,6 +58,10 @@ public class Automobile {
 		this.mileage = mileage;
 	}
 
+	/* Override to return a specific string 
+	 * from various types of variables. 
+	 * Used to output data as a string.
+	 */ 
 	@Override
 	public String toString() {
 		return make + " " + model + " " + color   + " " + year + " " + mileage;

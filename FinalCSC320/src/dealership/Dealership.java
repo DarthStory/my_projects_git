@@ -9,8 +9,11 @@ public class Dealership {
 		AutoInventory autoInventory = new AutoInventory();
 		Scanner scnr = new Scanner(System.in);
 		
+		/* A while loop that will keep running until specifically
+		 * told to stop
+		 */
 		while(true) {
-			// Start Menu
+			// Start Menu, to instruct user how to input
 			System.out.println("Automobile Inventory");
 			System.out.println("1. Add an automobile");
 			System.out.println("2. Modify an automobile");
@@ -18,109 +21,148 @@ public class Dealership {
 			System.out.println("4. View all automobiles");
 			System.out.println("0. Exit Inventory");
 			
+			// prompts to get a user input. 
 			System.out.print("Choose option 0-4.");
-			int choice = 0;
-			try {
-			choice = scnr.nextInt();
-			} catch (InputMismatchException e) {
-				System.out.println("Invalid entry. Please try again. 0-4: ");
-				scnr.nextInt();
+			// initializing choice. 
+			int choice = -1;
+			// since an "int" is being requested, a try/catch is implemented for anything outside
+			// that input. 
+			while (choice < 0)
+				try {
+				// requests input
+				choice = scnr.nextInt();
+				} catch (InputMismatchException e) {
+					System.out.println("Invalid entry. Please try again. 0-4: ");
+					// if it errors out, this consumes the last input and requests again
+					scnr.next();
 			}
+			// Start of the switch for the menu above
 			switch (choice) {
+			// 0 being the weird number to choose, it exits the program. 
 			case 0:
 				System.out.println("Exiting application.");
 				scnr.close();
+				// specifically exits the while loop to exit the program
 				return;
 			case 1:
-				// add 
+				// add automobile, gets input from user, puts them into the "automobile" and adds
+				// them to the Automobile object
 				System.out.println("Enter Make, Model, Color, Year, and Mileage");
+				System.out.print("Make: ");
 				String make = scnr.next();
+				System.out.print("Model: ");
 				String model = scnr.next();
+				System.out.print("Color: ");
 				String color = scnr.next();
 				
-				int year = 0;
-				while(year == 0) {
+				// loop to make sure that if it errors out, it will still get the year instead
+				// of skipping over and causing an error in the creation of the automobile
+				int year = -1;
+				while(year < 0) {
+					// try/catch because of requesting an int
 					try {
+						System.out.print("Year: ");
 						year = scnr.nextInt();
 					} catch (InputMismatchException e) {
 						System.out.println("Invalid year. Please enter again.");
+						scnr.next();
 					}
 				}
-				int mileage = 0;
-				while (mileage == 0) {
+				int mileage = -1;
+				while (mileage < 0) {
 					try {
+						System.out.print("Mileage: ");
 						mileage = scnr.nextInt();
 					} catch (InputMismatchException e) {
 						System.out.println("Invalid mileage. Please enter again.");
+						scnr.next();
 					}
 				}
+				// adds the variables to the Automobile list under the current available index using
+				// the addAutomobile method
 				autoInventory.addAutomobile(make, model, color, year, mileage);
 				System.out.println("Automobile added");
+				// stops case flow
 				break;
 			case 2:
 				// Modify an entry
 				System.out.print("Enter the number of the automobile to modify: ");
-				int modifyIndex = 0;
-				try {
-				modifyIndex = scnr.nextInt();
-				} catch (InputMismatchException e) {
-					System.out.println("Invalid number. Please try again.");
-					scnr.nextInt();
+				// initializes variable
+				int modifyIndex = -1;
+				// int again so try/catch
+				while (modifyIndex < 0) {
+					try {
+					modifyIndex = scnr.nextInt();
+					} catch (InputMismatchException e) {
+						System.out.println("Invalid number. Please try again.");
+						scnr.next();
+						continue;
+					}
+					// if the input is less than 0 or greater than the list size, it is outside
+					// of the parameters to select an index in the "Automobiles" list
+					if(modifyIndex <= 0 || modifyIndex > autoInventory.getAutomobiles().size()) {
+						System.out.println("Invalid number. Please try again.");
+						modifyIndex = -1;
+					}
 				}
-				
-				if(modifyIndex <= 0 || modifyIndex > autoInventory.getAutomobiles().size()) {
-					System.out.println("Invalid number. Please try again.");
-					break;
-				}
-				
+				// after it knows what index to modify, it really is just a repeat
+				// of "addAutomobile" 
 				System.out.println("Enter a new automobile Make, Model, Color, Year, and Mileage.");
+				System.out.print("Make: ");
 				String newMake = scnr.next();
+				System.out.print("Model: ");
 				String newModel = scnr.next();
+				System.out.print("Color: ");
 				String newColor = scnr.next();
 			
-				int newYear = 0;
-				while (newYear == 0) {
+				int newYear = -1;
+				while (newYear < 0) {
 					try {
+						System.out.print("Year: ");
 						newYear = scnr.nextInt();
 					} catch (InputMismatchException e) {
 						System.out.println("Invalid year. Please enter again.");
 						scnr.next();
-						break;
 					}
 				}
-				int newMileage = 0;
-				while (newMileage == 0) {
+				int newMileage = -1;
+				while (newMileage < 0) {
 					try {
+						System.out.print("Mileage: ");
 						newMileage = scnr.nextInt();
 					} catch (InputMismatchException e) {
 						System.out.println("Invalid year. Please enter again.");
 						scnr.next();
-						break;
 					}
 				}
+				// runs the edit automobile method to change the variables to the index chosen
+				// by the user. 
 				autoInventory.editAutomobile(modifyIndex - 1, newMake, newModel, newColor, newYear, newMileage);
 				System.out.println("Automobile modified successfuly.");
 				break;			
 			case 3:
-				// delete
+				// delete, takes the index selected by the user and deletes that chosen object. 
 				System.out.println("Enter the number of the automobile to delete: ");
-				int deleteIndex = 0;
-				try {
-				deleteIndex = scnr.nextInt();
-				} catch (InputMismatchException e) {
-					System.out.println("Invalid number. Please try again.");
-					scnr.nextInt();
-				}
-				
-				if (deleteIndex <= 0 || deleteIndex > autoInventory.getAutomobiles().size()) {
-					System.out.println("Invalid number. Please try again.");
-					break;
+				int deleteIndex = -1;
+				while (deleteIndex < 0) {
+					try {
+					deleteIndex = scnr.nextInt();
+					} catch (InputMismatchException e) {
+						System.out.println("Invalid number. Please try again.");
+						scnr.next();
+						continue;
+					}
+					
+					if (deleteIndex <= 0 || deleteIndex > autoInventory.getAutomobiles().size()) {
+						System.out.println("Invalid number. Please try again.");
+						deleteIndex = -1;
+					}
 				}
 				autoInventory.deleteAutomobile(deleteIndex - 1);
 				System.out.println("Automobile deleted successfully.");
 				break;
 			case 4:
-				// View all automobiles
+				// View all automobiles by running the viewAutomobiles method. 
 				autoInventory.viewAutomobiles();
 				break;
 			default:

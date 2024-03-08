@@ -1,0 +1,12 @@
+Atm program
+
+
+Start by saying welcome to the atm
+Ask for a username and password
+	if the username is Admin take them to one menu
+		Admin menu where you can:
+			Add accounts
+			delete accounts
+			modify accounts	
+	else, take them to a user menu
+		
