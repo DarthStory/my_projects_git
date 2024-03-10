@@ -25,6 +25,11 @@ public class AutoInventory {
 		Automobile automobile = new Automobile(make, model, color, year, mileage);
 		// adds object to list
 		automobiles.add(automobile);
+		System.out.println("\n" + automobile.getMake() 
+				+ " " + automobile.getModel() 
+				+ " " + automobile.getColor() 
+				+ " " + automobile.getYear() 
+				+ " " + automobile.getMileage() + "\n");
 	}
 	
 	// Edit an Automobile
@@ -37,6 +42,11 @@ public class AutoInventory {
 		automobile.setColor(color);
 		automobile.setYear(year);
 		automobile.setMileage(mileage);
+		System.out.println("\n" +automobile.getMake() 
+				+ " " + automobile.getModel() 
+				+ " " + automobile.getColor() 
+				+ " " + automobile.getYear() 
+				+ " " + automobile.getMileage() + "\n");
 	}
 	
 	// get method with the list of automobile that returns the array (automobiles)

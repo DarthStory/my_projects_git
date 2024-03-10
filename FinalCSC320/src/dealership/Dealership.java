@@ -63,7 +63,7 @@ public class Dealership {
 			case 1:
 				// add automobile, gets input from user, puts them into the "automobile" and adds
 				// them to the Automobile object
-				System.out.println("Enter Make, Model, Color, Year, and Mileage");
+				System.out.println("Follow prompts to enter Make, Model, Color, Year, and Mileage");
 				System.out.print("Make: ");
 				String make = scnr.next();
 				System.out.print("Model: ");
