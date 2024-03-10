@@ -12,7 +12,7 @@ public class Dealership {
 		/* A while loop that will keep running until specifically
 		 * told to stop
 		 */
-		while(true) {
+		while(true) {			
 			// Start Menu, to instruct user how to input
 			System.out.println("Automobile Inventory");
 			System.out.println("1. Add an automobile");
@@ -45,6 +45,7 @@ public class Dealership {
 				// specifically exits the while loop to exit the program
 				return;
 			case 1:
+				
 				// add automobile, gets input from user, puts them into the "automobile" and adds
 				// them to the Automobile object
 				System.out.println("Enter Make, Model, Color, Year, and Mileage");

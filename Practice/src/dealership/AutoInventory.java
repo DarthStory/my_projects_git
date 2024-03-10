@@ -4,8 +4,8 @@ package dealership;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AutoInventory {
-
+public class AutoInventory {			
+		
 		// creates a list of automobile called automobiles
 		private List<Automobile> automobiles;
 		

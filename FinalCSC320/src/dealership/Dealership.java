@@ -1,5 +1,6 @@
 package dealership;
 
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -14,7 +15,7 @@ public class Dealership {
 		 */
 		while(true) {
 			// Start Menu, to instruct user how to input
-			System.out.println("Automobile Inventory");
+			System.out.println("\nAutomobile Inventory");
 			System.out.println("1. Add an automobile");
 			System.out.println("2. Modify an automobile");
 			System.out.println("3. Delete an automobile");
@@ -40,6 +41,21 @@ public class Dealership {
 			switch (choice) {
 			// 0 being the weird number to choose, it exits the program. 
 			case 0:
+				while(true) {
+					System.out.print("Do you want to print out the list to a file? Y(Yes) or N(No)");
+					String answer = scnr.next();
+					char ch = answer.charAt(0);					
+					if (ch == 'n' || ch == 'N') {
+						System.out.println("File will not be printed.");
+						break;
+					}else if (ch == 'y' || ch == 'Y') {
+						autoInventory.printList();
+						break;							
+					}else {
+						System.out.println("Please enter either \"Y\" or \"N\". Thank you.\n");
+						continue;
+					}
+				}
 				System.out.println("Exiting application.");
 				scnr.close();
 				// specifically exits the while loop to exit the program
@@ -81,7 +97,7 @@ public class Dealership {
 				// adds the variables to the Automobile list under the current available index using
 				// the addAutomobile method
 				autoInventory.addAutomobile(make, model, color, year, mileage);
-				System.out.println("Automobile added");
+				System.out.println("Automobile added.\n");
 				// stops case flow
 				break;
 			case 2:
@@ -138,7 +154,7 @@ public class Dealership {
 				// runs the edit automobile method to change the variables to the index chosen
 				// by the user. 
 				autoInventory.editAutomobile(modifyIndex - 1, newMake, newModel, newColor, newYear, newMileage);
-				System.out.println("Automobile modified successfuly.");
+				System.out.println("Automobile modified successfuly.\n");
 				break;			
 			case 3:
 				// delete, takes the index selected by the user and deletes that chosen object. 
@@ -159,7 +175,7 @@ public class Dealership {
 					}
 				}
 				autoInventory.deleteAutomobile(deleteIndex - 1);
-				System.out.println("Automobile deleted successfully.");
+				System.out.println("Automobile deleted successfully.\n");
 				break;
 			case 4:
 				// View all automobiles by running the viewAutomobiles method. 
@@ -168,7 +184,6 @@ public class Dealership {
 			default:
 				System.out.println("Invalid choice. Please try again.");
 			}
-			System.out.println();
 		}
 	}
 }
