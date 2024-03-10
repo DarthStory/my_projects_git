@@ -40,9 +40,9 @@ public class AutoInventory {
 	}
 	
 	// get method with the list of automobile that returns the array (automobiles)
-	public List<Automobile> getAutomobiles() {
-		return automobiles;
-	}
+	//public List<Automobile> getAutomobiles() {
+		//return automobiles;
+	//}
 	
 	// view all Automobiles
 	public void viewAutomobiles() {
